@@ -1,0 +1,16 @@
+# perl commands to use right on the command line
+
+# separate decimals from integers to avoid confusion by perl 
+# example: confusing 1  2.5 as ’12.5’ in perl’s mind
+
+perl -pi.bak -we 's/ 2.5/\n2.5/g' newSum.txt
+
+# eliminating extra space by 3.5 to avoid processing errors
+# blank spaces causes issues in bash/open source code
+
+perl -pi.bak -we 's/ *3.5/3.5/g' newSum.txt
+
+# eliminating extra space between 1 and 6
+# to avoid confusing ‘1   6’ as 16
+perl -pi.bak -we 's/6/\n6/g' newSum.txt
+
